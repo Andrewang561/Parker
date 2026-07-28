@@ -4,10 +4,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.parker.dto.ParkingResponse;
+import com.parker.service.ParkingService;
 
 @RestController
 @RequestMapping("api")
 public class ParkingController {
+
+    private final ParkingService parkingService;
+
+    public ParkingController(ParkingService parkingService) {
+        this.parkingService = parkingService;
+    }
+
     @GetMapping("/hello")
     public String hello() {
         return "Hello From Parker! Sample Text";
@@ -15,6 +23,6 @@ public class ParkingController {
 
     @GetMapping("/parking")
     public ParkingResponse parking() {
-        return new ParkingResponse("Easy", 20);
+        return parkingService.getDifficulty();
     }
 }
