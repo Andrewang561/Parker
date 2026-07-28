@@ -8,7 +8,6 @@ Finding parking in unfamiliar or busy areas can be frustrating and time-consumin
 
 - 🟢 Green – Easy to find parking
 - 🟡 Yellow – Moderate parking difficulty
-- 🟠 Orange – Difficult to find parking
 - 🔴 Red – Very difficult to find parking
 
 ## Features
@@ -34,6 +33,7 @@ Parker estimates parking difficulty by combining publicly available map and park
 ## Technologies (Planned)
 
 - React
+- Typescript
 - Java
 - Spring Boot
 - Leaflet or Mapbox
