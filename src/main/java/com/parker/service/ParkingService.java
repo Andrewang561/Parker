@@ -7,7 +7,7 @@ import com.parker.dto.ParkingResponse;
 @Service
 public class ParkingService {
     
-    public ParkingResponse getDifficulty() {
-        return new ParkingResponse("Easy", 0);
+    public ParkingResponse getDifficulty(double lat, double lng) {
+        return new ParkingResponse(lat, lng);
     }
 }
