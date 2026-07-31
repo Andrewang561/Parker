@@ -7,6 +7,12 @@ import com.parker.dto.ParkingResponse;
 @Service
 public class ParkingService {
     
+    private final OSMService osmService;
+
+    public ParkingService(OSMService osmSerivce) {
+        this.osmService = osmSerivce;
+    }
+
     public ParkingResponse getDifficulty(double lat, double lng) {
         int score = 0;
         String difficulty = "";
