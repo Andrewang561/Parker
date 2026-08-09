@@ -23,10 +23,10 @@ public class ParkingController {
     }
 
     @GetMapping("/parking")
-    public ParkingResponse parking(
+    public String parking(
         @RequestParam double lat,
         @RequestParam double lng
     ) {
-        return parkingService.getDifficulty(lat, lng);
+        return parkingService.getParkingData(lat, lng);
     }
 }
