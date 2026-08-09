@@ -18,6 +18,20 @@ public class OSMService {
     }
     public List<ParkingLot> findParkingLots(double lat, double lng) {
         List<ParkingLot> lots = new ArrayList<>();
+
+        String query = """
+                [out:json];
+
+                (
+                    node["amenity"="parking"](around:500,%f,%f);
+                    way["amenity"="parking"](around:500,%f,%f);
+                    relation["amenity"="parking"](around:500,%f,%f);
+                );
+
+                out center;
+                """.formatted(lat, lng, lat, lng, lat, lng);
+        
+        String res = restClient.post().uri("api/interpreter").body(query).retrieve().body(String.class);
         return lots;
     }
 }
