@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.parker.dto.OverPassResponse;
 import com.parker.dto.ParkingResponse;
 import com.parker.service.ParkingService;
 
@@ -23,7 +25,7 @@ public class ParkingController {
     }
 
     @GetMapping("/parking")
-    public String parking(
+    public OverPassResponse parking(
         @RequestParam double lat,
         @RequestParam double lng
     ) {
