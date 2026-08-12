@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.parker.dto.OverPassResponse;
 import com.parker.dto.ParkingLot;
 import com.parker.dto.ParkingResponse;
 
@@ -19,11 +20,11 @@ public class ParkingService {
     public ParkingResponse getDifficulty(double lat, double lng) {
         int score = 0;
         String difficulty = "";
-        String parkingLots= osmService.findParkingLots(lat, lng);
+        OverPassResponse parkingLots= osmService.findParkingLots(lat, lng);
         return new ParkingResponse(difficulty, score);
     }
 
-    public String getParkingData(double lat, double lng) {
+    public OverPassResponse getParkingData(double lat, double lng) {
         return osmService.findParkingLots(lat, lng);
     }
 }
