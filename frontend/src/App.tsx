@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import './App.css'
+import MapClickHandler from './MapClickHandler';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           attribution='&copy; OpenStreetMap contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <MapClickHandler />
       </MapContainer>
     );
 }
