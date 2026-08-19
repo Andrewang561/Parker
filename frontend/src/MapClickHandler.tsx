@@ -2,9 +2,18 @@ import { useMapEvents } from "react-leaflet";
 
 function MapClickHandler() {
     useMapEvents({
-        click(e) {
-            console.log('Latitude', e.latlng.lat);
-            console.log('Longitude', e.latlng.lng);
+        async click(e) {
+            const latitude = e.latlng.lat;
+            const longitude = e.latlng.lng;
+            console.log('Latitude', latitude);
+            console.log('Longitude', longitude);
+            
+            const response = await fetch(
+                `http://localhost:8080/api/parking?latitude=${latitude}&longitude=${longitude}`
+            )
+
+            const data = await response.json();
+            console.log(data);
         },
     });
 
