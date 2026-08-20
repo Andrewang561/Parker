@@ -9,7 +9,7 @@ function MapClickHandler() {
             console.log('Longitude', longitude);
             
             const response = await fetch(
-                `http://localhost:8080/api/parking?latitude=${latitude}&longitude=${longitude}`
+                `http://localhost:8080/api/parking?lat=${latitude}&lng=${longitude}`
             )
 
             const data = await response.json();
