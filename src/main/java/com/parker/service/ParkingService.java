@@ -30,6 +30,9 @@ public class ParkingService {
             difficulty = "MEDIUM";
         } else if (score < 20) {
             difficulty = "EASY";
+            if (score < 0) {
+                score = 0;
+            }
         }
         return new ParkingResponse(difficulty, score);
     }
