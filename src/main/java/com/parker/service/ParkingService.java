@@ -23,8 +23,4 @@ public class ParkingService {
         OverPassResponse parkingLots= osmService.findParkingLots(lat, lng);
         return new ParkingResponse(difficulty, score);
     }
-
-    public OverPassResponse getParkingData(double lat, double lng) {
-        return osmService.findParkingLots(lat, lng);
-    }
 }

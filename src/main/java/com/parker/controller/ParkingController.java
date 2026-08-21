@@ -27,10 +27,10 @@ public class ParkingController {
     }
 
     @GetMapping("/parking")
-    public OverPassResponse parking(
+    public ParkingResponse parking(
         @RequestParam double lat,
         @RequestParam double lng
     ) {
-        return parkingService.getParkingData(lat, lng);
+        return parkingService.getDifficulty(lat, lng);
     }
 }
